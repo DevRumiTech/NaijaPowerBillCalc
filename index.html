@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+        <title>Naija Power Bill Calculator | Electricity Tariff Bands in Nigeria</title>
+      
+        <meta name="description" content="Calculate your Nigerian electricity bill by tariff band (A–E). Free, fast, accurate Naija power bill calculator." />
+        <meta name="keywords" content="Naija power bill calculator, electricity tariff band Nigeria, NEPA bill calculator, PHCN tariff" />
+        <meta name="author" content="NaijaPowerBillCalc" />
+      
+        <!-- Open Graph (WhatsApp, Facebook, Telegram) -->
+        <meta property="og:title" content="Naija Power Bill Calculator" />
+        <meta property="og:description" content="Estimate your monthly electricity bill in Nigeria using tariff bands A–E." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="assets/img/og-image.png" />
+        <meta property="og:url" content="" />
+      
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+      
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+      </head>
+      
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <img
+          src="assets/img/logo.png"
+          alt="Naija Power Bill Calculator logo"
+          class="logo"
+        />
+        <div class="brand-text">
+          <h1>Naija Power Bill Calculator</h1>
+          <p>Estimate your monthly electricity bill based on Nigeria’s tariff bands.</p>
+        </div>
+      </div>
+
+      <div class="theme-switch">
+        <button id="lightModeBtn" type="button">Light</button>
+        <button id="darkModeBtn" type="button">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="app">
+
+    <!-- CALCULATOR -->
+    <section id="calculator">
+      <label>
+        Tariff Band
+        <select id="tariffBand">
+          <option value="">Select band</option>
+          <option value="A">Band A</option>
+          <option value="B">Band B</option>
+          <option value="C">Band C</option>
+          <option value="D">Band D</option>
+          <option value="E">Band E</option>
+        </select>
+        <small>Based on NERC bands (A–E). If unsure, ask your DISCO.</small>
+      </label>
+
+      <label>
+        Units Consumed (kWh)
+        <input type="number" id="units" min="0" placeholder="e.g. 250" />
+        <small>Check your meter or last electricity bill.</small>
+      </label>
+
+      <label class="custom-rate-toggle">
+        <input type="checkbox" id="useCustomRate" />
+        I know my exact tariff (₦/kWh)
+      </label>
+
+      <div id="customRateWrapper" hidden>
+        <label>
+          Custom Tariff Rate (₦ per kWh)
+          <input type="number" id="customRate" min="0" placeholder="e.g. 225" />
+          <small>Use the ₦/kWh shown on your bill.</small>
+        </label>
+      </div>
+
+      <label>
+        City (optional)
+        <input type="text" id="city" placeholder="e.g. Ibadan" />
+        <small>Optional. For context only.</small>
+      </label>
+
+      <label>
+        State (optional)
+        <input type="text" id="state" placeholder="e.g. Oyo" />
+        <small>Optional. For context only.</small>
+      </label>
+
+      <!-- Ad space: above results -->
+      <div class="ad-slot ad-top">Ad Space</div>
+
+      <div id="results">
+        <h3>Estimated Monthly Bill</h3>
+        <p class="amount">₦0.00</p>
+        <p class="breakdown">Select your band and enter total kWh for the month.</p>
+      </div>
+
+      <!-- Ad space: below results -->
+      <div class="ad-slot ad-bottom">Ad Space</div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What are electricity tariff bands in Nigeria?</summary>
+        <p>
+          Tariff bands (A–E) classify customers based on average daily power supply hours.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this electricity bill calculation exact?</summary>
+        <p>
+          No. This is an estimate based on published average tariff rates.
+          Actual bills may vary by DISCO and meter type.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you collect my city or state information?</summary>
+        <p>
+          No. All inputs stay in your browser. We do not store or transmit any data.
+        </p>
+      </details>
+
+      <details>
+        <summary>How can I reduce my electricity bill?</summary>
+        <p>
+          Use energy-efficient appliances, switch off unused devices,
+          and monitor your monthly kWh consumption.
+        </p>
+      </details>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p>
+        This calculator runs entirely in your browser.
+        No personal data, location, or usage information is collected.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> NaijaPowerBillCalc</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
